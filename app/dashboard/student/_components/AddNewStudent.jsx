@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import { useForm } from "react-hook-form";
 import GlobalApi from '@/app/_services/GlobalApi';
 import CircularProgress from '@mui/material/CircularProgress';
-import { useAlert } from '@/app/context/AlertContext';
+import { useAlert } from '@/app/_context/AlertContext';
 
 function AddNewStudent({ refreshData }) {
     const [isOpen, setIsOpen] = useState(false);

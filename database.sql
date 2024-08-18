@@ -1,0 +1,201 @@
+use student;
+
+INSERT INTO student.grades (id, grade) VALUES 
+(1, '1st'),
+(2, '2nd'),
+(3, '3rd'),
+(4, '4th'),
+(5, '5th'),
+(6, '6th'),
+(7, '7th'),
+(8, '8th'),
+(9, '9th'),
+(10, '10th');
+
+INSERT IGNORE INTO student.student (id, name, grade, address, contact) VALUES
+(1, 'Aarav Sharma', '1st', '123 MG Road, Bengaluru', '9876543210'),
+(2, 'Vihaan Khanna', '2nd', '456 Brigade Road, Bengaluru', '9876543211'),
+(3, 'Vivaan Mehta', '3rd', '789 Residency Road, Bengaluru', '9876543212'),
+(4, 'Ananya Agarwal', '4th', '101 Church Street, Bengaluru', '9876543213'),
+(5, 'Aadya Gupta', '5th', '202 Commercial Street, Bengaluru', '9876543214'),
+(6, 'Arjun Verma', '6th', '303 Koramangala, Bengaluru', '9876543215'),
+(7, 'Ishaan Jain', '7th', '404 Indiranagar, Bengaluru', '9876543216'),
+(8, 'Diya Sharma', '8th', '505 Whitefield, Bengaluru', '9876543217'),
+(9, 'Krishna Rao', '9th', '606 Marathahalli, Bengaluru', '9876543218'),
+(10, 'Sara Iyer', '10th', '707 Sarjapur, Bengaluru', '9876543219'),
+(11, 'Riya Singh', '1st', '808 Hebbal, Bengaluru', '9876543220'),
+(12, 'Aditya Patel', '2nd', '909 Jayanagar, Bengaluru', '9876543221'),
+(13, 'Aryan Kapoor', '3rd', '1001 HSR Layout, Bengaluru', '9876543222'),
+(14, 'Mira Joshi', '4th', '1101 Bellandur, Bengaluru', '9876543223'),
+(15, 'Kabir Reddy', '5th', '1201 Malleswaram, Bengaluru', '9876543224'),
+(16, 'Naina Chauhan', '6th', '1301 JP Nagar, Bengaluru', '9876543225'),
+(17, 'Ishita Desai', '7th', '1401 BTM Layout, Bengaluru', '9876543226'),
+(18, 'Ayaan Naik', '8th', '1501 Yelahanka, Bengaluru', '9876543227'),
+(19, 'Jiya Pillai', '9th', '1601 Bannerghatta Road, Bengaluru', '9876543228'),
+(20, 'Rohan Singh', '10th', '1701 Electronic City, Bengaluru', '9876543229'),
+(21, 'Tara Menon', '1st', '1801 Rajajinagar, Bengaluru', '9876543230'),
+(22, 'Kavya Shah', '2nd', '1901 Kengeri, Bengaluru', '9876543231'),
+(23, 'Parth Goel', '3rd', '2001 Yeshwanthpur, Bengaluru', '9876543232'),
+(24, 'Anushka Sen', '4th', '2101 Ulsoor, Bengaluru', '9876543233'),
+(25, 'Arya Mishra', '5th', '2201 Basavanagudi, Bengaluru', '9876543234'),
+(26, 'Reyansh Gupta', '6th', '2301 Richmond Town, Bengaluru', '9876543235'),
+(27, 'Ahaan Saxena', '7th', '2401 Frazer Town, Bengaluru', '9876543236'),
+(28, 'Navya Bhat', '8th', '2501 Shantinagar, Bengaluru', '9876543237'),
+(29, 'Hrithik Deshmukh', '9th', '2601 Cooke Town, Bengaluru', '9876543238'),
+(30, 'Aishwarya Rao', '10th', '2701 Wilson Garden, Bengaluru', '9876543239'),
+(31, 'Devansh Patel', '1st', '2801 Basaveshwaranagar, Bengaluru', '9876543240'),
+(32, 'Rudra Kumar', '2nd', '2901 Vijayanagar, Bengaluru', '9876543241'),
+(33, 'Anvi Kapoor', '3rd', '3001 Nagavara, Bengaluru', '9876543242'),
+(34, 'Aarohi Mehta', '4th', '3101 Banashankari, Bengaluru', '9876543243'),
+(35, 'Saanvi Reddy', '5th', '3201 RT Nagar, Bengaluru', '9876543244'),
+(36, 'Prisha Jain', '6th', '3301 Domlur, Bengaluru', '9876543245'),
+(37, 'Vihaan Rao', '7th', '3401 Majestic, Bengaluru', '9876543246'),
+(38, 'Anvi Pillai', '8th', '3501 Sheshadripuram, Bengaluru', '9876543247'),
+(39, 'Arnav Gupta', '9th', '3601 Kalyan Nagar, Bengaluru', '9876543248'),
+(40, 'Avni Patel', '10th', '3701 Hennur, Bengaluru', '9876543249'),
+(41, 'Aditi Verma', '1st', '3801 Ramamurthy Nagar, Bengaluru', '9876543250'),
+(42, 'Rishi Kumar', '2nd', '3901 Kammanahalli, Bengaluru', '9876543251'),
+(43, 'Sanya Gupta', '3rd', '4001 Yeshwanthpur, Bengaluru', '9876543252'),
+(44, 'Kiran Reddy', '4th', '4101 Kanakapura Road, Bengaluru', '9876543253'),
+(45, 'Madhavi Rao', '5th', '4201 Vijayanagar, Bengaluru', '9876543254'),
+(46, 'Rohan Iyer', '6th', '4301 Madiwala, Bengaluru', '9876543255'),
+(47, 'Nidhi Sharma', '7th', '4401 HSR Layout, Bengaluru', '9876543256'),
+(48, 'Pranav Desai', '8th', '4501 Marathahalli, Bengaluru', '9876543257'),
+(49, 'Tanya Shah', '9th', '4601 Jayanagar, Bengaluru', '9876543258'),
+(50, 'Aryan Verma', '10th', '4701 Whitefield, Bengaluru', '9876543259');
+
+INSERT INTO student.student (name, grade, address, contact) VALUES
+('Aarav Sharma', '1st', '123 MG Road, Bengaluru', '9876543210'),
+('Vihaan Khanna', '2nd', '456 Brigade Road, Bengaluru', '9876543211'),
+('Vivaan Mehta', '3rd', '789 Residency Road, Bengaluru', '9876543212'),
+('Ananya Agarwal', '4th', '101 Church Street, Bengaluru', '9876543213'),
+('Aadya Gupta', '5th', '202 Commercial Street, Bengaluru', '9876543214'),
+('Arjun Verma', '6th', '303 Koramangala, Bengaluru', '9876543215'),
+('Ishaan Jain', '7th', '404 Indiranagar, Bengaluru', '9876543216'),
+('Diya Sharma', '8th', '505 Whitefield, Bengaluru', '9876543217'),
+('Krishna Rao', '9th', '606 Marathahalli, Bengaluru', '9876543218'),
+('Sara Iyer', '10th', '707 Sarjapur, Bengaluru', '9876543219'),
+('Riya Singh', '1st', '808 Hebbal, Bengaluru', '9876543220'),
+('Aditya Patel', '2nd', '909 Jayanagar, Bengaluru', '9876543221'),
+('Aryan Kapoor', '3rd', '1001 HSR Layout, Bengaluru', '9876543222'),
+('Mira Joshi', '4th', '1101 Bellandur, Bengaluru', '9876543223'),
+('Kabir Reddy', '5th', '1201 Malleswaram, Bengaluru', '9876543224'),
+('Naina Chauhan', '6th', '1301 JP Nagar, Bengaluru', '9876543225'),
+('Ishita Desai', '7th', '1401 BTM Layout, Bengaluru', '9876543226'),
+('Ayaan Naik', '8th', '1501 Yelahanka, Bengaluru', '9876543227'),
+('Jiya Pillai', '9th', '1601 Bannerghatta Road, Bengaluru', '9876543228'),
+('Rohan Singh', '10th', '1701 Electronic City, Bengaluru', '9876543229'),
+('Tara Menon', '1st', '1801 Rajajinagar, Bengaluru', '9876543230'),
+('Kavya Shah', '2nd', '1901 Kengeri, Bengaluru', '9876543231'),
+('Parth Goel', '3rd', '2001 Yeshwanthpur, Bengaluru', '9876543232'),
+('Anushka Sen', '4th', '2101 Ulsoor, Bengaluru', '9876543233'),
+('Arya Mishra', '5th', '2201 Basavanagudi, Bengaluru', '9876543234'),
+('Reyansh Gupta', '6th', '2301 Richmond Town, Bengaluru', '9876543235'),
+('Ahaan Saxena', '7th', '2401 Frazer Town, Bengaluru', '9876543236'),
+('Navya Bhat', '8th', '2501 Shantinagar, Bengaluru', '9876543237'),
+('Hrithik Deshmukh', '9th', '2601 Cooke Town, Bengaluru', '9876543238'),
+('Aishwarya Rao', '10th', '2701 Wilson Garden, Bengaluru', '9876543239'),
+('Devansh Patel', '1st', '2801 Basaveshwaranagar, Bengaluru', '9876543240'),
+('Rudra Kumar', '2nd', '2901 Vijayanagar, Bengaluru', '9876543241'),
+('Anvi Kapoor', '3rd', '3001 Nagavara, Bengaluru', '9876543242'),
+('Aarohi Mehta', '4th', '3101 Banashankari, Bengaluru', '9876543243'),
+('Saanvi Reddy', '5th', '3201 RT Nagar, Bengaluru', '9876543244'),
+('Prisha Jain', '6th', '3301 Domlur, Bengaluru', '9876543245'),
+('Vihaan Rao', '7th', '3401 Majestic, Bengaluru', '9876543246'),
+('Anvi Pillai', '8th', '3501 Sheshadripuram, Bengaluru', '9876543247'),
+('Arnav Gupta', '9th', '3601 Kalyan Nagar, Bengaluru', '9876543248'),
+('Avni Patel', '10th', '3701 Hennur, Bengaluru', '9876543249'),
+('Aditi Verma', '1st', '3801 Ramamurthy Nagar, Bengaluru', '9876543250'),
+('Rishi Kumar', '2nd', '3901 Kammanahalli, Bengaluru', '9876543251'),
+('Sanya Gupta', '3rd', '4001 Yeshwanthpur, Bengaluru', '9876543252'),
+('Kiran Reddy', '4th', '4101 Kanakapura Road, Bengaluru', '9876543253'),
+('Madhavi Rao', '5th', '4201 Vijayanagar, Bengaluru', '9876543254'),
+('Rohan Iyer', '6th', '4301 Madiwala, Bengaluru', '9876543255'),
+('Nidhi Sharma', '7th', '4401 HSR Layout, Bengaluru', '9876543256'),
+('Pranav Desai', '8th', '4501 Marathahalli, Bengaluru', '9876543257'),
+('Tanya Shah', '9th', '4601 Jayanagar, Bengaluru', '9876543258'),
+('Aryan Verma', '10th', '4701 Whitefield, Bengaluru', '9876543259');
+
+
+INSERT INTO student.attendance (id, studentId, present, day, date) VALUES
+(1, 1, true, 1, '01/2024'),
+(2, 2, false, 1, '01/2024'),
+(3, 3, true, 1, '01/2024'),
+(4, 4, true, 1, '01/2024'),
+(5, 5, false, 1, '01/2024'),
+(6, 6, true, 1, '01/2024'),
+(7, 7, true, 1, '01/2024'),
+(8, 8, false, 1, '01/2024'),
+(9, 9, true, 1, '01/2024'),
+(10, 10, true, 1, '01/2024'),
+(11, 11, true, 1, '01/2024'),
+(12, 12, false, 1, '01/2024'),
+(13, 13, true, 1, '01/2024'),
+(14, 14, true, 1, '01/2024'),
+(15, 15, false, 1, '01/2024'),
+(16, 16, true, 1, '01/2024'),
+(17, 17, true, 1, '01/2024'),
+(18, 18, false, 1, '01/2024'),
+(19, 19, true, 1, '01/2024'),
+(20, 20, true, 1, '01/2024'),
+(21, 21, true, 1, '01/2024'),
+(22, 22, false, 1, '01/2024'),
+(23, 23, true, 1, '01/2024'),
+(24, 24, true, 1, '01/2024'),
+(25, 25, false, 1, '01/2024'),
+(26, 26, true, 1, '01/2024'),
+(27, 27, true, 1, '01/2024'),
+(28, 28, false, 1, '01/2024'),
+(29, 29, true, 1, '01/2024'),
+(30, 30, true, 1, '01/2024'),
+(31, 31, true, 1, '01/2024'),
+(32, 32, false, 1, '01/2024'),
+(33, 33, true, 1, '01/2024'),
+(34, 34, true, 1, '01/2024'),
+(35, 35, false, 1, '01/2024'),
+(36, 36, true, 1, '01/2024'),
+(37, 37, true, 1, '01/2024'),
+(38, 38, false, 1, '01/2024'),
+(39, 39, true, 1, '01/2024'),
+(40, 40, true, 1, '01/2024'),
+(41, 41, true, 1, '01/2024'),
+(42, 42, false, 1, '01/2024'),
+(43, 43, true, 1, '01/2024'),
+(44, 44, true, 1, '01/2024'),
+(45, 45, false, 1, '01/2024'),
+(46, 46, true, 1, '01/2024'),
+(47, 47, true, 1, '01/2024'),
+(48, 48, false, 1, '01/2024'),
+(49, 49, true, 1, '01/2024'),
+(50, 50, true, 1, '01/2024');
+
+select * from student.attendance;
+
+
+
+SELECT 
+    STUDENT.name AS name,
+    ATTENDANCE.present AS present,
+    ATTENDANCE.day AS day,
+    ATTENDANCE.date AS month,
+    STUDENT.grade AS grade,
+    STUDENT.id AS studentId,
+    ATTENDANCE.id AS attendanceId
+FROM 
+    STUDENT
+LEFT JOIN 
+    ATTENDANCE 
+ON 
+    STUDENT.id = ATTENDANCE.studentId 
+    AND STUDENT.grade = '7TH' 
+    AND ATTENDANCE.date = '01/2024';
+
+
+SELECT a.day, COUNT(*) AS TotalPresentCountByDay
+FROM student.attendance a
+JOIN student.student s ON a.studentId = s.id
+WHERE s.grade = '2nd' AND a.date = '01/2024' AND a.present = true
+GROUP BY a.day
+order by a.day;	
+
+ 

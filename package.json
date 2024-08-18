@@ -19,6 +19,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/x-date-pickers": "^7.12.1",
     "ag-grid-react": "^32.1.0",
+    "autoprefixer": "^10.4.20",
     "axios": "^1.7.3",
     "date-fns": "^3.6.0",
     "dayjs": "^1.11.12",
@@ -35,13 +36,14 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.1",
     "react-icons": "^5.2.1",
+    "recharts": "^2.12.7",
     "require": "^2.4.20",
     "sqlite3": "^5.1.7",
     "styled-components": "^6.1.12"
   },
   "devDependencies": {
     "daisyui": "^4.12.10",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10"
   }
 }

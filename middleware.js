@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-// This function can be marked `async` if using `await` inside
 export async function middleware(request) {
     const { isAuthenticated } = getKindeServerSession();
 
@@ -10,7 +9,6 @@ export async function middleware(request) {
     }
 }
 
-// See "Matching Paths" below to learn more
 export const config = {
     matcher: '/dashboard/:path*',
 }

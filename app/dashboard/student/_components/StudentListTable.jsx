@@ -10,7 +10,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { DialogContentText } from '@mui/material';
 import { Button } from 'react-bootstrap';
 import GlobalApi from '@/app/_services/GlobalApi';
-import { useAlert } from '@/app/context/AlertContext';
+import { useAlert } from '@/app/_context/AlertContext';
 
 const StudentListTable = ({ studentList, refreshData }) => {
   const pagination = true;
@@ -105,12 +105,12 @@ const StudentListTable = ({ studentList, refreshData }) => {
         className="ag-theme-quartz"
         style={{ height: 425 }}
       >
-        <div className='p-2 rounded border shadow-sm flex align-center gap-5 my-2 max-w-sm'>
+        <div className='p-2 rounded border shadow-sm flex align-center gap-5 my-2 max-w-sm' >
           <CiSearch className='w-5 h-5' />
           <input
             type="text"
             placeholder="Search..."
-            className='outline-none w-full'
+            className='outline-none w-full bg-transparent'
             onChange={(e) => setSearchInput(e.target.value)}
           />
         </div>

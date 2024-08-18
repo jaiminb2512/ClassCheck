@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom DaisyUI theme settings if needed */
+[data-theme="light"] {
+  --color-primary: #3b82f6;
+  --color-secondary: #f3f4f6;
+  --color-accent: #f59e0b;
+}
+
+[data-theme="dark"] {
+  --color-primary: #1e3a8a;
+  --color-secondary: #111827;
+  --color-accent: #d97706;
+}
