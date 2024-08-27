@@ -3,15 +3,15 @@
 import GradeSelect from '@/app/_components/GradeSelect';
 import MonthSelection from '@/app/_components/MonthSelection';
 import GlobalApi from '@/app/_services/GlobalApi';
-import moment from 'moment';
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { FaSearch } from "react-icons/fa";
 import AttendanceGrid from './_components/AttendanceGrid';
+import { useDataContext } from '../../_context/DataContext';
 
 const Attendance = () => {
-  const [selectedMonth, setSelectedMonth] = useState(moment().toDate());
-  const [selectedGrade, setSelectedGrade] = useState(' ');
+  const { selectedMonth, setSelectedMonth } = useDataContext()
+  const { selectedGrade, setSelectedGrade } = useDataContext()
   const [attendanceList, setAttendanceList] = useState([]);
 
   useEffect(() => {
@@ -21,11 +21,9 @@ const Attendance = () => {
   }, [selectedMonth, selectedGrade]);
   
   const onSearchHandler = () => {
-
-    const month = moment(selectedMonth).format('MM/YYYY');
-    GlobalApi.GetAttendance(selectedGrade, month).then(resp => {
+    GlobalApi.GetAttendance(selectedGrade, selectedMonth).then(resp => {
       setAttendanceList(resp.data.result);
-      console.log('attendance attendanceList  ' + attendanceList);
+      // console.log(attendanceList)
     }).catch(error => {
       console.error('Error fetching attendance data:', error);
     });
@@ -47,8 +45,8 @@ const Attendance = () => {
           </div>
         </div>
 
-        <Button 
-          variant="primary" 
+        <Button
+          variant="primary"
           className='font-bold d-flex align-items-center'
           onClick={onSearchHandler}
         >

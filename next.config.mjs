@@ -5,6 +5,8 @@ const nextConfig = {
         domains:['lh3.googleusercontent.com']
     }
 
+    // images.remotePatterns
+
 };
 
 export default nextConfig;

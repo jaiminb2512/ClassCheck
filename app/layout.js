@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
                 <SideNav />
               </div>
               <div className="md:ml-64">
-                {/* <Header /> */}
+                <Header />
                 <Alert />
                 {children}
               </div>

@@ -10,10 +10,10 @@ function Header() {
   const { user } = useKindeBrowserClient()
 
   return (
-    <div className='p-4 shadow-sm border flex justify-between'>
-      <div>
+    <div className='p-4 shadow-sm border flex justify-end'>
+      {/* <div>
           <SelectTheme />
-      </div>
+      </div> */}
       <div>
         <Image src={user?.picture} width={35}
           height={35}

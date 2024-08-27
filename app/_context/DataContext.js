@@ -3,19 +3,17 @@
 import React, { createContext, useState, useContext } from 'react';
 import dayjs from 'dayjs';
 
-// Create the context
 const DataContext = createContext();
 
-// Create a provider component
 export const DataProvider = ({ children }) => {
-  const [selectedGrade, setSelectedGrade] = useState(null);
+  const [selectedGrade, setSelectedGrade] = useState('1st');
   const [selectedMonth, setSelectedMonth] = useState(dayjs());
 
   const value = {
     selectedGrade,
     setSelectedGrade,
     selectedMonth,
-    setSelectedMonth,
+    setSelectedMonth, 
   };
 
   return (
@@ -25,5 +23,4 @@ export const DataProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the DataContext
 export const useDataContext = () => useContext(DataContext);

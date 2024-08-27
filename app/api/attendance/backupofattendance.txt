@@ -1,6 +1,6 @@
 import { getDBConnection, STUDENT } from "@/utils/db";
 import { ATTENDANCE } from "@/utils/schema";
-import { eq, and, like, isNull, or } from "drizzle-orm";
+import { eq, and, like } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
 const db = await getDBConnection();
@@ -17,28 +17,23 @@ export async function GET(req) {
             present: ATTENDANCE.present,
             day: ATTENDANCE.day,
             date: ATTENDANCE.date,
-            grade: STUDENT.grade,
-            attendanceId: ATTENDANCE.id
+            grade: STUDENT.grade
         })
-            .from(STUDENT)
-            .leftJoin(ATTENDANCE, eq(STUDENT.id, ATTENDANCE.studentId))
-            .where(
-                and(
-                    eq(STUDENT.grade, grade),
-                    or(
-                        eq(ATTENDANCE.date, month),
-                        isNull(ATTENDANCE.date)
-                    )
-                )
-            )
-            .orderBy(STUDENT.id);
-
+        .from(STUDENT)
+        .leftJoin(ATTENDANCE, and(
+            eq(STUDENT.id, ATTENDANCE.studentId),
+            like(ATTENDANCE.date, month)
+        ))
+        .where(eq(STUDENT.grade, grade))
+        .orderBy(STUDENT.id);
         return NextResponse.json({ result });
 
     } catch (error) {
         return NextResponse.json({ success: false, error: error.message });
     }
 }
+
+
 
 
 export async function POST(req) {

@@ -7,8 +7,11 @@ const BarChartComponent = ({ attendanceList, totalPresentData }) => {
 
     useEffect(() => {
         formatAttendanceListCount()
+        console.log("data   " + data)
+        console.log( "attendanceList   " + attendanceList)
+        console.log( "totalPresentData    " + totalPresentData)
     }, [attendanceList, totalPresentData])
-
+    
     const formatAttendanceListCount = () => {
         const totalStudent = getUniqueRecord(attendanceList)
 

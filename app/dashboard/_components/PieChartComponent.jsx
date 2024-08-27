@@ -14,8 +14,8 @@ const PieChartComponent = ({attendanceList}) => {
             const today = moment().format('D');
             const presentPerc = (attendanceList.length / (total.length * Number(today))) * 100;
             setData([
-                { name: 'Present', value: Number( presentPerc.toFixed(3)), fill: '#4c8cf8' },
-                { name: 'Absent', value: Number(100 - presentPerc.toFixed(3)),  fill: '#1fe6d1' }
+                { name: 'Present', value: Number( presentPerc.toFixed(1)), fill: '#4c8cf8' },
+                { name: 'Absent', value: Number(100 - presentPerc.toFixed(1)),  fill: '#1fe6d1' }
             ])
         }
     }, [attendanceList]);

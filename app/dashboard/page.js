@@ -3,17 +3,15 @@
 import React, { useEffect, useState } from 'react';
 import MonthSelection from '../_components/MonthSelection';
 import GradeSelect from '../_components/GradeSelect';
-import { useTheme } from '@emotion/react';
-import moment from 'moment';
 import GlobalApi from '../_services/GlobalApi';
 import StatusList from './_components/StatusList';
 import BarChartComponent from './_components/BarChartComponent';
 import PieChartComponent from './_components/PieChartComponent';
+import { useDataContext } from '../_context/DataContext';
 
 const Dashboard = () => {
-  const { setTheme } = useTheme();
-  const [selectedMonth, setSelectedMonth] = useState();
-  const [selectedGrade, setSelectedGrade] = useState();
+  const { selectedMonth, setSelectedMonth } = useDataContext()
+  const { selectedGrade, setSelectedGrade } = useDataContext()
   const [attendanceList, setAttendanceList] = useState();
   const [totalPresentData, setTotalPresentData] = useState([])
 
@@ -22,18 +20,16 @@ const Dashboard = () => {
     TotalPresentCountByDay()
   }, [selectedMonth, selectedGrade]);
 
-  const month = moment(selectedMonth).format('MM/YYYY');
   const getStudentAttendance = () => {
-    GlobalApi.GetAttendance(selectedGrade, month).then(resp => {
+    GlobalApi.GetAttendance(selectedGrade, selectedMonth).then(resp => {
       setAttendanceList(resp.data.result);
-      console.log(attendanceList);
     }).catch(error => {
       console.error("Error fetching attendance data:", error);
     });
   }
 
   const TotalPresentCountByDay = () => {
-    GlobalApi.TotalPresentCountByDay(month, selectedGrade).then(resp => {
+    GlobalApi.TotalPresentCountByDay(selectedMonth, selectedGrade).then(resp => {
       setTotalPresentData(resp.data)
     })
   }

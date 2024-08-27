@@ -17,9 +17,11 @@ function AttendanceGrid({ attendanceList, selectedMonth }) {
     const paginationPageSizeSelector = [25, 50, 100];
     const [searchInput, setSearchInput] = useState("");
 
-    const daysInMonth = (year, month) => new Date(year, month + 1, 0).getDate();
-    const numberofDays = daysInMonth(moment(selectedMonth).year(), moment(selectedMonth).month());
-    const daysArrays = Array.from({ length: numberofDays }, (_, i) => i + 1);
+    const daysInMonth = (year, month) => new Date(year, month, 0).getDate();
+    const year = moment(selectedMonth, 'MM/YYYY').format('YYYY');
+    const month = moment(selectedMonth, 'MM/YYYY').format('MM');
+    const numberOfDays = daysInMonth(year, parseInt(month)); 
+    const daysArray = Array.from({ length: numberOfDays }, (_, i) => i + 1);
 
     const { showAlert } = useAlert();
 
@@ -29,12 +31,12 @@ function AttendanceGrid({ attendanceList, selectedMonth }) {
             setRowData(userList);
 
             const newColDefs = [{ field: 'name' }];
-            daysArrays.forEach((date) => {
+            daysArray.forEach((date) => {
                 newColDefs.push({
                     field: date.toString(), width: 50, editable: true
                 });
 
-                userList.forEach(obj => {
+                userList.forEach(obj => {   
                     obj[date] = isPresent(obj.studentId, date);
                 });
             });
@@ -42,12 +44,12 @@ function AttendanceGrid({ attendanceList, selectedMonth }) {
         }
 
     }, [attendanceList, selectedMonth]);
-    
+
     const isPresent = (studentId, day) => {
         const result = attendanceList.find(item => item.day === day && item.studentId === studentId);
         return result ? true : false;
     };
-    
+
     // const getUniqueRecord = () => {
     //     const existingUser = new Set();
     //     const uniqueRecord = [];
@@ -63,28 +65,27 @@ function AttendanceGrid({ attendanceList, selectedMonth }) {
     // };
 
     const onMarkAttendance = (day, studentId, presentStatus, name) => {
-        const date = moment(selectedMonth).format('MM/yyyy');
-
+        console.log(selectedMonth)
         if (presentStatus) {
             const data = {
                 day: day,
                 studentId: studentId,
                 present: true,
-                date: date
+                date: selectedMonth
             };
 
             GlobalApi.MarkAttendance(data).then(resp => {
-                showAlert(name + ' Attendance marked as present on ' + day + '/' + date + '.', 'success');
+                showAlert(name + ' Attendance marked as present on ' + day + '/' + selectedMonth + '.', 'success');
             });
         } else if (!presentStatus) {
             const data = {
                 day: day,
-                date: date,
+                date: selectedMonth,
                 studentId: studentId
             };
 
             GlobalApi.MarkAbsent(data).then(resp => {
-                showAlert(name + ' Attendance marked as absent on ' + day + '/' + date + '.', 'warning');
+                showAlert(name + ' Attendance marked as absent on ' + day + '/' + selectedMonth + '.', 'warning');
             });
         }
     };
